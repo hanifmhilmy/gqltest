@@ -1,4 +1,26 @@
-# gqltest
+# Checkout
+
+This end point purpose to calculate final product checkout, with list SKU and Quantity as input
+
+## Request Mutation
+
+```graphql
+mutation {
+  checkout(reqs: [ { sku: "120P90", qty: 1} ]){
+    products{
+      sku
+      name
+      price
+      qty
+      discount
+      subtotal // final price after discount
+    }
+    total
+  }
+}
+```
+
+## Sample cURL
 
 ```curl
 
